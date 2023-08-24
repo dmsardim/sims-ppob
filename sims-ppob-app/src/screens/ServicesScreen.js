@@ -15,7 +15,7 @@ const ServicesScreen = () => {
         })}
       </div>
       <div className="ml-20 mt-10">
-        <p className="text-sm font-bold">Promo menarik lainnya</p>
+        <p className="text-sm font-bold">Temukan promo menarik</p>
       </div>
       <div className="ml-20 mt-7">
         <Splide
