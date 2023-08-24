@@ -1,5 +1,5 @@
-import { CheckCircleIcon } from "@heroicons/react/24/solid";
-import { useNavigate } from "react-router-dom";
+import { CheckCircleIcon } from '@heroicons/react/24/solid';
+import { useNavigate } from 'react-router-dom';
 
 const SuccessModal = ({ formattedAmount, idModal, message }) => {
   const navigate = useNavigate();
@@ -15,12 +15,11 @@ const SuccessModal = ({ formattedAmount, idModal, message }) => {
         </p>
         <p className="py-2">Berhasil</p>
         <div className=" flex flex-col mt-5">
-          {/* if there is a button in form, it will close the modal */}
           <button
             className="p-0 text-red-500 font-bold"
             onClick={() => {
               window.my_modal_3.close();
-              navigate("/");
+              navigate('/');
             }}
           >
             Kembali ke Beranda

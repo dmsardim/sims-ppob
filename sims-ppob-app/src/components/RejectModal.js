@@ -14,7 +14,6 @@ const RejectModal = ({ formattedAmount, idModal, message }) => {
         </p>
         <p className="py-1">Gagal</p>
         <div className=" flex flex-col mt-3">
-          {/* if there is a button in form, it will close the modal */}
           <button
             className="p-0 text-red-500 font-bold"
             onClick={() => {

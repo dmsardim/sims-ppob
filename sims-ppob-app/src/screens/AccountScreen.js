@@ -53,7 +53,6 @@ const AccountScreen = () => {
     localStorage.removeItem('token');
     navigate('/auth/login');
   };
-  console.log(file);
   return (
     <>
       <div className="p-10 mt-10 mx-auto w-3/5">
