@@ -11,7 +11,7 @@ const Transaction = ({ dataProp }) => {
   const formatTime = () => {
     let hour = new Date(dataProp.created_on).getHours();
     let minute = new Date(dataProp.created_on).getMinutes();
-    return `${hour}` + ' : ' + `${minute}` + ' WIB';
+    return `${hour}:${minute} WIB `;
   };
 
   return (
@@ -21,8 +21,9 @@ const Transaction = ({ dataProp }) => {
           <h3 className={`font-bold ${dataProp.transaction_type === 'PAYMENT' ? 'text-red-400' : 'text-green-400'}  text-2xl`}>
             {dataProp.transaction_type === 'PAYMENT' ? '-' : '+'} {rupiahFormatter(dataProp.total_amount)}
           </h3>
-          <div className="text-xs text-gray-300 font-semibold">
-            {formatedDate} {formatTime()}
+          <div className=" flex flex-row gap-3">
+            <p className="text-xs text-gray-300 font-semibold">{formatedDate}</p>
+            <p className="text-xs text-gray-300 font-semibold">{formatTime()}</p>
           </div>
         </div>
         <p className=" text-sm">{dataProp.description}</p>

@@ -25,11 +25,17 @@ const TransactionScreen = () => {
     getListTransactionHistory(token);
   }, [dispatch, limit]);
 
+  useEffect(() => {
+    let monthNow = new Date().toLocaleString('id-ID', { month: 'long' });
+    console.log(monthNow, 'monthNow<<<');
+    setMonth(monthNow);
+  }, []);
+
   const addLimit = () => {
     setLimit(limit + 5);
   };
   if (!value) return;
-  const filtereTransaction = value.filter((x) => new Date(x.created_on).toLocaleString('id-ID', { month: 'long' }) == month);
+  const filtereTransaction = value.filter((x) => new Date(x.created_on).toLocaleString('id-ID', { month: 'long' }) === month);
   const sliceFive = filtereTransaction.slice(0, limit);
   return (
     <>
