@@ -1,5 +1,5 @@
-import { API } from "../_constants";
-import Services from "./config";
+import { API } from '../_constants';
+import Services from './config';
 
 const loginUser = async (data) => {
   const url = API.LOGIN;
@@ -32,19 +32,9 @@ const getUserBalance = async (token) => {
 };
 
 const updateImageProfile = async (token, data) => {
-  for (var pair of data.entries()) {
-    console.log(pair[0] + ", " + pair[1]);
-  }
   const url = API.PROFILE_IMAGE;
   const services = new Services(url, token);
   return await services.uploadFile(data);
 };
 
-export {
-  loginUser,
-  registerUser,
-  getUserProfile,
-  updateUserProfile,
-  getUserBalance,
-  updateImageProfile,
-};
+export { loginUser, registerUser, getUserProfile, updateUserProfile, getUserBalance, updateImageProfile };

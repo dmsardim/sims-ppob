@@ -85,7 +85,7 @@ export const postUserRegister = (newUser) => {
       const response = await registerUser(newUser);
       dispatch(constRegisterSuccess(response));
     } catch (error) {
-      console.log(error);
+      console.log('Maaf server bermasalah');
     } finally {
       dispatch(loading(false));
     }
@@ -148,7 +148,7 @@ export const userBalance = (token) => {
       const { data: response } = await getUserBalance(token);
       dispatch(constUserBalance(response.data));
     } catch (error) {
-      console.log(error);
+      console.log('Maaf server bermasalah');
     }
   };
 };
@@ -160,7 +160,7 @@ export const topUpBalance = (token, data) => {
       await topUp(token, data);
       dispatch(userBalance(token));
     } catch (error) {
-      console.log(error);
+      console.log('Maaf server bermasalah');
     } finally {
       dispatch(loading(false));
     }
@@ -173,7 +173,7 @@ export const listServices = (token) => {
       const { data: response } = await service(token);
       dispatch(constListServices(response.data));
     } catch (error) {
-      console.log(error);
+      console.log('Maaf server bermasalah');
     }
   };
 };
@@ -184,7 +184,7 @@ export const transactionHistory = (token, data) => {
       const { data: response } = await getTransactionHistory(token, data);
       dispatch(getListTransactionHistory(response.data.records));
     } catch (error) {
-      console.log(error);
+      console.log('Maaf server bermasalah');
     }
   };
 };
@@ -225,8 +225,7 @@ export const uploadImageProfile = (token, data) => {
   return async (dispatch) => {
     try {
       dispatch(loading(true));
-      const { data: response } = await updateImageProfile(token, data);
-      console.log(response);
+      await updateImageProfile(token, data);
       dispatch(getProfile(token));
       Toast.fire({
         icon: 'success',

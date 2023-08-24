@@ -54,7 +54,7 @@ const PaymentScreen = () => {
           <TextInput className={'w-full'} nameIcon={'CreditCardIcon'} dataValue={rupiahFormatter(amount)} typeInput={'text'} placeholder={'Masukkan Nominal'} onDataChange={handleChange} disabled={true} />
           <button
             type="button"
-            className="bg-gray-400 w-full rounded-lg py-2 hover:bg-gray-300"
+            className=" bg-primary text-white w-full rounded-lg py-2 hover:bg-red-400"
             onClick={() => {
               window.my_modal_1.showModal();
             }}

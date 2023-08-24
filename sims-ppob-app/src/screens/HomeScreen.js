@@ -15,28 +15,28 @@ const HomeScreen = () => {
       try {
         await dispatch(getProfile(token));
       } catch (error) {
-        console.log(error);
+        console.log('Maaf server bermasalah');
       }
     };
     const getBalanceUser = async () => {
       try {
         await dispatch(userBalance(token));
       } catch (error) {
-        console.log(error);
+        console.log('Maaf server bermasalah');
       }
     };
     const getServices = async () => {
       try {
         await dispatch(listServices(token));
       } catch (error) {
-        console.log(error);
+        console.log('Maaf server bermasalah');
       }
     };
     const getBanner = async () => {
       try {
         await dispatch(listBanner(token));
       } catch (error) {
-        console.log(error);
+        console.log('Maaf server bermasalah');
       }
     };
     getProfileUser();

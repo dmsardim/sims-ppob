@@ -28,7 +28,7 @@ const AccountScreen = () => {
         navigate('/');
       })
       .catch((err) => {
-        console.log(err);
+        console.log('Maaf server bermasalah');
       });
   };
 
@@ -45,7 +45,7 @@ const AccountScreen = () => {
         navigate('/');
       })
       .catch((err) => {
-        console.log(err);
+        console.log('Maaf server bermasalah');
       });
   };
 

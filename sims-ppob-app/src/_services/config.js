@@ -78,7 +78,6 @@ export default class Services {
       'Content-Type': 'multipart/form-data',
       Authorization: `Bearer ${this.token}`,
     };
-    console.log(data);
     try {
       return await axios.put(this.url, data, this.config);
     } catch (error) {

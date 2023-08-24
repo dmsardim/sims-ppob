@@ -1,13 +1,13 @@
-import logo from "../assets/Logo.png";
-import TextInput from "./TextInput";
-import { Link, useNavigate } from "react-router-dom";
-import { useState } from "react";
-import { useDispatch } from "react-redux";
-import { postUserLogin } from "../store/actions/actionCreators";
+import logo from '../assets/Logo.png';
+import TextInput from './TextInput';
+import { Link, useNavigate } from 'react-router-dom';
+import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { postUserLogin } from '../store/actions/actionCreators';
 
-const LoginForm = ({onDataValue}) => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+const LoginForm = ({ onDataValue }) => {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
   const [wrongPassword, setWrongPassword] = useState(false);
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -19,11 +19,10 @@ const LoginForm = ({onDataValue}) => {
   const handleLogin = () => {
     dispatch(postUserLogin(dataFromLogin))
       .then((_) => {
-        navigate("/");
+        navigate('/');
       })
       .catch((err) => {
-        console.log(err);
-        onDataValue(true)
+        onDataValue(true);
         setWrongPassword(true);
       });
   };
@@ -36,40 +35,20 @@ const LoginForm = ({onDataValue}) => {
           </div>
           <div className="ml-2 font-bold text-lg">SIMS PPOB</div>
         </div>
-        <div className="font-bold text-xl mb-5">
-          Masuk atau buat akun untuk memulai
-        </div>
+        <div className="font-bold text-xl mb-5">Masuk atau buat akun untuk memulai</div>
         <div className=" items-center">
-          <TextInput
-            alert={false}
-            typeInput="email"
-            nameIcon={"AtSymbolIcon"}
-            placeholder={"masukan email anda"}
-            onDataChange={(value) => setEmail(value)}
-          />
-          <TextInput
-            alert={wrongPassword}
-            typeInput="password"
-            nameIcon={"LockClosedIcon"}
-            placeholder={"masukan password anda"}
-            onDataChange={(value) => setPassword(value)}
-          />
-          <button
-            className="btn w-full bg-primary hover:bg-primary text-white mt-7"
-            onClick={handleLogin}
-          >
+          <TextInput alert={false} typeInput="email" nameIcon={'AtSymbolIcon'} placeholder={'masukan email anda'} onDataChange={(value) => setEmail(value)} />
+          <TextInput alert={wrongPassword} typeInput="password" nameIcon={'LockClosedIcon'} placeholder={'masukan password anda'} onDataChange={(value) => setPassword(value)} />
+          <button className="btn w-full bg-primary hover:bg-primary text-white mt-7" onClick={handleLogin}>
             Masuk
           </button>
         </div>
 
         <div className=" mt-4">
           <p className=" text-sm">
-            belum punya akun? register{" "}
+            belum punya akun? register{' '}
             <Link to={`/auth/register`} id="to-register">
-              <span
-                style={{ cursor: "pointer" }}
-                className=" text-red-600 font-bold"
-              >
+              <span style={{ cursor: 'pointer' }} className=" text-red-600 font-bold">
                 disini
               </span>
             </Link>

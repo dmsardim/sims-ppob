@@ -37,7 +37,7 @@ const RegisterForm = () => {
         navigate('/auth/login');
       })
       .catch((err) => {
-        console.log(err);
+        console.log('Maaf server bermasalah');
       });
   };
   return (
