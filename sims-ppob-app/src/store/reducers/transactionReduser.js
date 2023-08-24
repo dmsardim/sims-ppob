@@ -1,19 +1,19 @@
 import { TRANSACTION_HISTORY } from '../actions/actionTypes';
 
 const initialState = {
-    value: [],
+  transaction: [],
 };
 
 function transactionReducer(state = initialState, action) {
-    switch (action.type) {
-        case TRANSACTION_HISTORY:
-            return {
-                ...state,
-                value: action.payload,
-            };
-        default:
-            return state;
-    }
+  switch (action.type) {
+    case TRANSACTION_HISTORY:
+      return {
+        ...state,
+        value: action.payload,
+      };
+    default:
+      return state;
+  }
 }
 
 export default transactionReducer;
