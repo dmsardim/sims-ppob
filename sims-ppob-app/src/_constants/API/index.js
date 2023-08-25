@@ -9,7 +9,7 @@ const API = {
   GET_BALANCE: `${API_URL}/balance`,
   TOP_UP: `${API_URL}/topup`,
   GET_SERVICES: `${API_URL}/services`,
-  TRANSACTION : `${API_URL}/transaction`,
+  TRANSACTION: `${API_URL}/transaction`,
   GET_TRANSACTION_HISTORY: `${API_URL}/transaction/history`,
   GET_BANNER: `${API_URL}/banner`,
 };

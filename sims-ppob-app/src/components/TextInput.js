@@ -26,7 +26,7 @@ const TextInput = ({ className, alert = false, nameIcon, dataValue, typeInput = 
   ];
   return (
     <>
-      <div className={` flex ${alert ? ' border-red-500' : 'border-gray-300'} border my-1 px-2 py-2 rounded-lg ${className ? className : 'max-w-xs  w-full'}`}>
+      <div className={` flex ${alert ? ' border-red-500' : 'border-gray-300'} border my-1 px-2 py-2 rounded-lg ${className ?? 'max-w-xs  w-full'}`}>
         {dataIcon.find((item) => item.name === nameIcon).icon}
         <input
           type={active === true ? 'text' : typeInput}
@@ -47,7 +47,11 @@ const TextInput = ({ className, alert = false, nameIcon, dataValue, typeInput = 
             </button>
           ))}
       </div>
-      <label className="label justify-end">{alert && message ? <span className="label-text-alt text-right text-red-500">{message}</span> : null}</label>
+      {alert && message ? (
+        <label className="label justify-end">
+          <span className="label-text-alt text-right text-red-500">{message}</span>
+        </label>
+      ) : null}
     </>
   );
 };
